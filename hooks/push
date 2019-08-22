@@ -1,0 +1,12 @@
+#!/bin/bash
+set -ex
+
+docker push $DOCKER_REPO:1.0-yolov3_coco
+docker push $DOCKER_REPO:1.0-yolov3_openimages
+docker push $DOCKER_REPO:1.0-yolo9000
+docker push $DOCKER_REPO:1.0_cuda-yolov3_coco
+docker push $DOCKER_REPO:1.0_cuda-yolov3_openimages
+docker push $DOCKER_REPO:1.0_cuda-yolo9000
+docker push $DOCKER_REPO:1.0_cuda_tc-yolov3_coco
+docker push $DOCKER_REPO:1.0_cuda_tc-yolov3_openimages
+docker push $DOCKER_REPO:1.0_cuda_tc-yolo9000

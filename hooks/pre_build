@@ -1,0 +1,6 @@
+#!/bin/bash
+set -ex
+
+docker --version
+docker info
+env
