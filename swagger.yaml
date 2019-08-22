@@ -1,0 +1,50 @@
+swagger: '2.0'
+info:
+  title: YOLO Object Detection API
+  version: '1.0'
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /detect:
+    get:
+      operationId: app.detect_from_url
+      summary: Perform object detection on image at URL.
+      parameters:
+        - name: url
+          in: query
+          description: URL of image
+          type: string
+          required: true
+        - name: threshold
+          in: query
+          description: Detection threshold
+          type: number
+          minimum: 0
+          maximum: 1
+          default: 0.25
+      responses:
+        200:
+          description: Returns detections, confidences and coordinates.
+    post:
+      operationId: app.detect_from_file
+      summary: Perform object detection on uploaded image.
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: image_file
+          in: formData
+          description: Image
+          type: file
+          required: true
+        - name: threshold
+          in: formData
+          description: Detection threshold
+          type: number
+          minimum: 0
+          maximum: 1
+          default: 0.25
+      responses:
+        200:
+          description: Returns detections, confidences and coordinates.
