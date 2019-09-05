@@ -5,7 +5,7 @@ exposed as a REST API using [connexion](https://github.com/zalando/connexion). F
 
 ## Quick start
 
-Pull the image from [Docker Hub](https://cloud.docker.com/u/johannestang/repository/docker/johannestang/yolo_service) and spin up a container:
+Pull the image from [Docker Hub](https://hub.docker.com/r/johannestang/yolo_service) and spin up a container:
 ```
 docker run -d --rm --name yolo_service -p 8080:8080 johannestang/yolo_service:1.0-yolov3_coco 
 ```
@@ -15,7 +15,7 @@ The service provides a user interface at [localhost:8080/ui](http://localhost:80
 
 ## Image variants
 
-You can build the images yourself using the `build-local.sh` script or pull them from [Docker Hub](https://cloud.docker.com/u/johannestang/repository/docker/johannestang/yolo_service).
+You can build the images yourself using the `build-local.sh` script or pull them from [Docker Hub](https://hub.docker.com/r/johannestang/yolo_service).
 They come in nine variants based on three different models/data sets and three different configurations of the `darknet` library.
 The different models are:
 
