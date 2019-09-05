@@ -4,9 +4,9 @@ set -ex
 docker push $DOCKER_REPO:1.0-yolov3_coco
 docker push $DOCKER_REPO:1.0-yolov3_openimages
 docker push $DOCKER_REPO:1.0-yolo9000
-docker push $DOCKER_REPO:1.0_cuda10.1-yolov3_coco
-docker push $DOCKER_REPO:1.0_cuda10.1-yolov3_openimages
-docker push $DOCKER_REPO:1.0_cuda10.1-yolo9000
-docker push $DOCKER_REPO:1.0_cuda10.1_tc-yolov3_coco
-docker push $DOCKER_REPO:1.0_cuda10.1_tc-yolov3_openimages
-docker push $DOCKER_REPO:1.0_cuda10.1_tc-yolo9000
+docker push $DOCKER_REPO:1.0_cuda10.0-yolov3_coco
+docker push $DOCKER_REPO:1.0_cuda10.0-yolov3_openimages
+docker push $DOCKER_REPO:1.0_cuda10.0-yolo9000
+docker push $DOCKER_REPO:1.0_cuda10.0_tc-yolov3_coco
+docker push $DOCKER_REPO:1.0_cuda10.0_tc-yolov3_openimages
+docker push $DOCKER_REPO:1.0_cuda10.0_tc-yolo9000
