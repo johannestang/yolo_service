@@ -9,9 +9,9 @@ Pull the image from [Docker Hub](https://hub.docker.com/r/johannestang/yolo_serv
 ```
 docker run -d --rm --name yolo_service -p 8080:8080 johannestang/yolo_service:1.0-yolov3_coco 
 ```
+This will expose two endpoints: `detect` which returns the detected classes, and `annotate` which returns a copy of the image annotated with the detections. Use a GET request if you want to provide an URL to the image, or a POST request if you want to upload an image file.
 
-This will expose a single endpoint `detect` that accepts GET and POST requests where the former takes a URL of an image and the latter lets you upload an image for detection.
-The service provides a user interface at [localhost:8080/ui](http://localhost:8080/ui) where the endpoint can be tested and the details of the input parameters are listed.
+The service provides a user interface at [localhost:8080/ui](http://localhost:8080/ui) where the endpoints can be tested and the details of the input parameters are listed.
 
 ## Image variants
 

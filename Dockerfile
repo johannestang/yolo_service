@@ -30,7 +30,7 @@ FROM ${app_image}
 
 # Bare-bones python install
 RUN apt-get update && \
-    apt-get install -y libgomp1 wget && \
+    apt-get install -y libgomp1 wget unzip && \
     apt-get install -y --no-install-recommends python3-pip && \
     apt-get install -y python3-setuptools && \
     pip3 install --no-cache-dir wheel && \
@@ -56,6 +56,11 @@ COPY requirements.txt .
 COPY app.py .
 COPY swagger.yaml .
 RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Install font
+RUN wget http://sourceforge.net/projects/dejavu/files/dejavu/2.37/dejavu-sans-ttf-2.37.zip
+RUN unzip -j dejavu-sans-ttf-2.37.zip dejavu*/ttf/DejaVuSans.ttf
+RUN rm dejavu-sans-ttf-2.37.zip
 
 # Model to use (defaults to yolov3_coco):
 ARG download_url="https://pjreddie.com/media/files/"

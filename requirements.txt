@@ -13,6 +13,8 @@ Jinja2==2.10.1
 jsonschema==2.6.0
 MarkupSafe==1.1.1
 openapi-spec-validator==0.2.8
+pathlib==1.0.1
+Pillow==6.0.0
 PyYAML==5.1.2
 requests==2.22.0
 six==1.12.0

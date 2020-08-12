@@ -48,3 +48,52 @@ paths:
       responses:
         200:
           description: Returns detections, confidences and coordinates.
+  /annotate:
+    get:
+      operationId: app.annotate_from_url
+      summary: Perform object detection on image at URL and return an annotated version of the image.
+      produces:
+        - image/jpeg
+      parameters:
+        - name: url
+          in: query
+          description: URL of image
+          type: string
+          required: true
+        - name: threshold
+          in: query
+          description: Detection threshold
+          type: number
+          minimum: 0
+          maximum: 1
+          default: 0.25
+      responses:
+        200:
+          description: Returns annotated image.
+          schema:
+            type: file
+    post:
+      operationId: app.annotate_from_file
+      summary: Perform object detection on uploaded image and return an annotated version of the image.
+      consumes:
+        - multipart/form-data
+      produces:
+        - image/jpeg
+      parameters:
+        - name: image_file
+          in: formData
+          description: Image
+          type: file
+          required: true
+        - name: threshold
+          in: formData
+          description: Detection threshold
+          type: number
+          minimum: 0
+          maximum: 1
+          default: 0.25
+      responses:
+        200:
+          description: Returns annotated image.
+          schema:
+            type: file
