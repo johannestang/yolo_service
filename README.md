@@ -16,12 +16,13 @@ The service provides a user interface at [localhost:8080/ui](http://localhost:80
 ## Image variants
 
 You can build the images yourself using the `build-local.sh` script or pull them from [Docker Hub](https://hub.docker.com/r/johannestang/yolo_service).
-They come in nine variants based on three different models/data sets and three different configurations of the `darknet` library.
+They come in multiple variants based on different models/data sets and different configurations of the `darknet` library.
 The different models are:
 
 1. YOLOv3 trained on the [COCO dataset](http://cocodataset.org) covering 80 classes listed [here](https://github.com/AlexeyAB/darknet/blob/master/data/coco.names). Tag: `yolov3_coco`.
 2. YOLOv3 trained on the [Open Images dataset](https://storage.googleapis.com/openimages/web/index.html) covering 601 classes listed [here](https://github.com/AlexeyAB/darknet/blob/master/data/openimages.names). Tag: `yolov3_openimages`.
-3. [YOLO9000](https://pjreddie.com/publications/yolo9000/) covering more than 9000 classes listed [here](https://github.com/AlexeyAB/darknet/blob/master/cfg/9k.names). Tag: `yolo90000`.
+3. [YOLO9000](https://pjreddie.com/publications/yolo9000/) covering more than 9000 classes listed [here](https://github.com/AlexeyAB/darknet/blob/master/cfg/9k.names). Tag: `yolo9000`.
+1. [YOLOv4](https://arxiv.org/abs/2004.10934) trained on the [COCO dataset](http://cocodataset.org) covering 80 classes listed [here](https://github.com/AlexeyAB/darknet/blob/master/data/coco.names). Tag: `yolov4_coco`.
 
 The different `darknet` configurations:
 

@@ -12,11 +12,13 @@ def sigterm_handler(_signo, _stack_frame):
     sys.exit()
 
 def detect(filename, threshold):
-    r = darknet.detect(net, meta, bytes(filename, "ascii"), threshold)
-    # Class label needs to be decoded to ascii in order to not cause issues.
+    im = darknet.load_image(bytes(filename, "ascii"), 0, 0)
+    r = darknet.detect_image(network, class_names, im, thresh=threshold)
+    darknet.free_image(im)
+    # Convert confidence from string to float:
     if len(r) > 0:
         for i in range(len(r)):
-            r[i] = (r[i][0].decode('ascii'), r[i][1], r[i][2])
+            r[i] = (r[i][0], float(r[i][1]), r[i][2])
     return r
 
 def detect_from_url(url, threshold):
@@ -55,8 +57,13 @@ def detect_from_file():
 configPath = os.environ.get("config_file")
 weightPath = os.environ.get("weights_file")
 metaPath = os.environ.get("meta_file")
-net = darknet.load_net(bytes(configPath, "ascii"), bytes(weightPath, "ascii"), 0)
-meta = darknet.load_meta(bytes(metaPath, "ascii"))
+
+network, class_names, class_colors = darknet.load_network(
+    configPath,
+    metaPath,
+    weightPath,
+    batch_size=1
+)
 
 # Create API:
 app = connexion.App(__name__)
