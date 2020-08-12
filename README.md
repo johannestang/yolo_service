@@ -13,6 +13,8 @@ This will expose two endpoints: `detect` which returns the detected classes, and
 
 The service provides a user interface at [localhost:8080/ui](http://localhost:8080/ui) where the endpoints can be tested and the details of the input parameters are listed.
 
+Python examples showing how to use the API are provided in the `examples` folder.
+
 ## Image variants
 
 You can build the images yourself using the `build-local.sh` script or pull them from [Docker Hub](https://hub.docker.com/r/johannestang/yolo_service).
