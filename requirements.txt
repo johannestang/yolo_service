@@ -15,7 +15,7 @@ MarkupSafe==1.1.1
 openapi-spec-validator==0.2.8
 pathlib==1.0.1
 Pillow==7.1.0
-PyYAML==5.1.2
+PyYAML==5.4
 requests==2.22.0
 six==1.12.0
 swagger-ui-bundle==0.0.5
