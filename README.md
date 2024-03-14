@@ -1,7 +1,7 @@
 # YOLO Object Detection Service
 
 Dockerized object detection service using [YOLO](https://pjreddie.com/darknet/yolo/) based on [AlexeyAB's darknet fork](https://github.com/AlexeyAB/darknet) and
-exposed as a REST API using [connexion](https://github.com/zalando/connexion). For details see [this post](https://johs.me/posts/object-detection-service-yolo-docker/).
+exposed as a REST API using [connexion](https://github.com/zalando/connexion). For details see [this post](./docs/object-detection-service-yolo-docker.md).
 
 ## Quick start
 
